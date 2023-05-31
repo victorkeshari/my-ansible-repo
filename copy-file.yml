@@ -1,0 +1,12 @@
+---
+- name: this playbook copies file from control to managed nodes
+  hosts: all
+  become: true
+  tasks:
+  - name: copying file
+    copy:
+      src: /opt/ansible/index.html
+      dest: /home/ansadmin
+      owner: ansadmin
+      group: ansadmin
+      mode: 0700

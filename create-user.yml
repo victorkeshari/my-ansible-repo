@@ -1,0 +1,11 @@
+---
+- name: this playbook is to create user on managed nodes
+  hosts: all
+  become: true
+  tasks:
+  - name: creating user jim
+    user: 
+     name: jim
+  - name: creating user dic
+    user:
+     name: dic

@@ -1,0 +1,17 @@
+---
+- name: this playbook installs httpd
+  become: true
+  hosts: webservers
+  tasks:
+  - name: installing package
+    yum: 
+     name: httpd
+     state: installed
+    notify: start apache
+
+  handlers:
+  - name: start apache
+    service:
+     name: httpd
+     state: started
+
